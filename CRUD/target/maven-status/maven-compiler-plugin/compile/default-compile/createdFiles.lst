@@ -1,0 +1,6 @@
+RegistrarEstudiante.class
+Consultar.class
+com\mycompany\crud\resources\JakartaEE10Resource.class
+com\mycompany\crud\JakartaRestConfiguration.class
+EditarEstudiante.class
+EliminarEstudiante.class

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestionar Estudiantes</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div>
+        <form name="formularioRegistrar" method="get" action="RegistrarEstudiante">
+            <label>Nombre</label><br>
+            <input type="text" name="nombre" required><br>
+            
+            <label>Apellido Paterno</label><br>
+            <input type="text" name="appat" required><br>
+            
+            <label>Apellido Materno</label><br>
+            <input type="text" name="apmat" required><br>
+            
+            <label>Edad</label><br>
+            <input type="number" name="edad" required><br>
+            
+            <label>Email</label><br>
+            <input type="text" name="email" required><br>
+            
+            <input type="submit" value="Guardar Estudiante"><br>
+            <input type="reset" value="Borrar Datos">
+        </form>
+    </div>
+    <br>
+    <div class="contenedorConsultar">
+        <form name="formularioConsultar" method="get" action="Consultar">
+            <input type="submit" value="Consultar Tabla General de Usuarios">
+        </form>
+        <br>
+        <form name="formularioEditar" method="get" action="EditarEstudiante">
+            <label>ID del Estudiante</label><br>
+            <input type="text" name="id_usu" required><br>
+            <input type="submit" value="Editar Estudiante">
+        </form>
+        <br>
+        <form name="formularioEliminar" method="get" action="EliminarEstudiante">
+            <label>ID del Estudiante</label><br>
+            <input type="text" name="id_usu" required><br>
+            <input type="submit" value="Eliminar Estudiante">
+        </form>
+    </div>
+</body>
+</html>
