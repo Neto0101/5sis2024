@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class RegistrarEstudiante extends HttpServlet {
+public class Registrar extends HttpServlet {
 
     private Connection con;
     private PreparedStatement insertStmt;

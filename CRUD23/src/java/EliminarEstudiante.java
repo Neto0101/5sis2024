@@ -1,27 +1,36 @@
-import jakarta.servlet.annotation.WebServlet;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
+ */
+
 import java.io.IOException;
 import java.io.PrintWriter;
+import jakarta.servlet.*;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
+
+/**
+ *
+ * @author coppel
+ */
 @WebServlet(urlPatterns = {"/EliminarEstudiante"})
 public class EliminarEstudiante extends HttpServlet {
 
     private Connection con;
 
     public void init(ServletConfig scg) throws ServletException {
-        String url = "jdbc:mysql://localhost:3306/registro0101";
+        String url = "jdbc:mysql://localhost/registro0101";
         String username = "root";
         String password = "po0101gh#segR";
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(url, username, password);
             System.out.println("Se conectó a la BD");
         } catch (Exception e) {

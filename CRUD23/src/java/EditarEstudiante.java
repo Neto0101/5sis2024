@@ -1,15 +1,25 @@
-import jakarta.servlet.annotation.WebServlet;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
+ */
+
 import java.io.IOException;
 import java.io.PrintWriter;
+import jakarta.servlet.*;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
+
+/**
+ *
+ * @author coppel
+ */
 @WebServlet("/EditarEstudiante")
 public class EditarEstudiante extends HttpServlet {
 
@@ -97,7 +107,7 @@ public class EditarEstudiante extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String id = request.getParameter("id_usu");
+            String id= request.getParameter("id_usu");
             String nom_usu = request.getParameter("nom_usu");
             String appat_usu = request.getParameter("appat_usu");
             String apmat_usu = request.getParameter("apmat_usu");
@@ -112,7 +122,7 @@ public class EditarEstudiante extends HttpServlet {
 
             try {
                 int edad_usu = Integer.parseInt(edad_usu_str);
-                String query = "UPDATE registroalumnos3 SET nom_usu=?, appat_usu=?, apmat_usu=?, edad_usu=?, email_usu=? WHERE id_usu=?";
+                String query = "UPDATE mregistro SET nom_usu=?, appat_usu=?, apmat_usu=?, edad_usu=?, email_usu=? WHERE id_usu=?";
                 PreparedStatement ps = con.prepareStatement(query);
                 ps.setString(1, nom_usu);
                 ps.setString(2, appat_usu);
